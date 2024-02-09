@@ -4,14 +4,14 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CatalogMenu from './CatalogMenu/CatalogMenu';
+import Link from 'next/link';
 
 export default function Header() {
 
     const [openCatalog, setOpenCatalog] = useState(false)
 
-    console.log(openCatalog)
   return (
-    <div className='fixed w-full h-[80px] bg-slate-300 flex justify-between items-center gap-8 px-[10%] py-4'>
+    <div className='fixed w-full h-[80px] bg-slate-300 flex justify-between items-center gap-8 px-[10%] py-4 z-50'>
         <div className='flex items-center gap-4 '>
             <h2 className='text-[#333] text-2xl font-semibold'>Logo</h2>
             <CatalogButton setOpenCatalog={setOpenCatalog} openCatalog={openCatalog}/>
@@ -21,6 +21,13 @@ export default function Header() {
             <button className='absolute right-2 w-1/12 bg-[#FBC100] rounded-e-lg py-2 px-4 text-lg'><SearchIcon fontSize='medium'/></button>
         </div>
         <div className='flex items-center gap-6'>
+        <div>
+        <Link href="/products">
+            <h2 className='text-lg font-semibold'>
+            Products
+            </h2>
+        </Link>
+        </div>
             <div className='flex items-center flex-col'>
                 <ShoppingCartOutlinedIcon color='inherit'/>
                 Cart

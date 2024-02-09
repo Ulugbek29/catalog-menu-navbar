@@ -1,9 +1,11 @@
 
 
-export default function Home() {
+
+export default function Home(props) {
+
   return (
-    <div className="">
-      Home Page
-    </div>
+    <>
+      Click Products in the Navbar to see all product list
+    </>
   );
 }
